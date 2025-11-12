@@ -18,7 +18,7 @@ pub struct Window {
     #[cfg(target_os = "macos")]
     pub raw_handle: core_graphics_helmer_fork::window::CGWindowID,
 
-    #[cfg(target_os = "liux")]
+    #[cfg(target_os = "linux")]
     pub raw_handle: core_graphics_helmer_fork::window::CGWindowID,
 }
 
