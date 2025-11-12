@@ -19,7 +19,7 @@ pub struct Window {
     pub raw_handle: core_graphics_helmer_fork::window::CGWindowID,
 
     #[cfg(target_os = "linux")]
-    pub raw_handle: core_graphics_helmer_fork::window::CGWindowID,
+    pub raw_handle: raw_window_handle::RawWindowHandle,
 }
 
 #[derive(Debug, Clone)]
@@ -34,7 +34,7 @@ pub struct Display {
     pub raw_handle: core_graphics_helmer_fork::display::CGDisplay,
 
     #[cfg(target_os = "linux")]
-    pub raw_handle: core_graphics_helmer_fork::display::CGDisplay,
+    pub raw_handle: *mut x11_dl::xlib::Display, // X11 Display指针
 }
 
 #[derive(Debug, Clone)]
